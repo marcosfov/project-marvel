@@ -1,0 +1,168 @@
+body {
+    font-family: 'ssf4', Courier, monospace;
+    background: var(--cor-secundaria);
+}
+
+body::before {
+    content: "";
+    background-image: url(../imagens/1cYrMYF.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.2;
+}
+
+main {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.header {
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    margin: 0 0.625rem;
+}
+.header .title {
+    color: var(--cor-titulo-fraco);
+    text-transform: uppercase;
+    font-size: 3.25rem ;
+    line-height: 6.375rem ;
+    -webkit-text-stroke: 0.125rem var(--cor-titulo-forte)
+}
+
+
+
+.character-select {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0.625rem;
+}
+
+.character-select .big-character {
+    text-align: center;
+    width: 30%;
+    height: 70vh;
+    position: relative;
+}
+
+.character-select .big-character img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.character-select .big-character .name::before{
+    content: "";
+    width: 100%;
+    height: 1.875rem ;
+    position: absolute;
+    bottom: -0.938rem;
+    left: 0;
+    
+}
+
+.character-select .big-character.player-1 .name::before{
+    background-color: var(--cor-azul-principal);  
+}
+
+.character-select .big-character.player-2 .name::before{
+    background-color: var(--cor-vermelha-principal);  
+
+}
+
+.character-select .big-character .name h2{
+    color: var(--cor-padrao);
+    font-family: "command", sans-serif;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    font-size: 1.688rem;
+
+}
+
+.character-list {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 37.5rem;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+.character-list .character {
+    border: 0.125rem solid var(--cor-padrao);
+    background-color: var(--cor-padrao);
+    width: 30%;
+    height: 10rem;
+    cursor: pointer;
+    z-index: 2;
+    border-radius: 0.313rem;
+    position: relative;
+    transition: 0.15s ease-in-out;
+}
+
+.character-list .character img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.313rem;
+
+}
+
+.character-list .character:hover {
+    animation: c-glowing-blue .3s ease-in-out infinite;
+    animation-direction: alternate;
+    transform: scale(1.07);
+    z-index: 2;
+    
+}
+
+.character-list .character.selected {
+    border: 0.125rem solid var(--cor-azul-media);
+    animation: c-glowing-blue .3s ease-in-out infinite;
+    animation-direction: alternate;
+    
+}
+
+.character-list .character.selected-2 {
+    border: 0.125rem solid var(--cor-vermelha-fraca);
+    animation: c-glowing-red .3s ease-in-out infinite;
+    animation-direction: alternate;
+    
+}
+
+.character-list .character.selected-2:hover {
+    animation: c-glowing-red .3s ease-in-out infinite;
+    animation-direction: alternate;
+    
+}
+
+.character-list .character .tag {
+    display: none;
+    font-family: 'Times New Roman', Times, serif;
+    position: absolute;
+    top: 0.313rem;
+    left: 0.313rem;
+    color: var(--cor-azul-media);
+    transition: opacity .3s ease-in-out;
+    animation: text-glowing-blue .3s ease-in-out infinite;
+    animation-direction: alternate;
+
+}
+
+.character-list .character.selected .tag{
+    display: block;
+    animation: text-glowing-blue .3s ease-in-out infinite;
+    animation-direction: alternate; 
+}
+
+.character-list .character.selected-2 .tag{
+    display: block;
+    animation: text-glowing-red .3s ease-in-out infinite;
+    animation-direction: alternate;
+}
