@@ -1,6 +1,6 @@
 <h1> Project Marvel </h1>
 
-> Status: Desenvolviemto Pausado 🚧
+> Status: Desenvolvimento Pausado 🚧
 
 <h3> 📜<strong>Descrição:</strong>  </h3>
 <p> Este é um projeto inicial para demonstrar habilidades com html, css e javascript </p>
